@@ -1,6 +1,5 @@
 #Task1
 #Make a matrix of 80 random numbers drawn from a normal distribution (see the function rnorm()). You can decide on the values for mean and sd, and the dimensions of the matrix.
-
 t1=rnorm(80, mean = 0, sd = 1)
 dim(t1)=c(8,10)
 class(t1)
@@ -8,21 +7,14 @@ View(t1)
 
 #Task2
 #create an array containing 100 random numbers drawn from a uniform distribution (see runif()) with at least 3 groups. Consider the limitations in terms of the dimensions you can specify given the length of the data you are adding to the matrix.
-
 t2=array(runif(100, min = 0, max = 1),dim=c(2,5,10))
 t2
 
 # Homework
-#As with last week, the first thing to do is to ensure you have gone through - and understood - the information above in full.
-#Write an Rmarkdown describing how you do the following:
-#  load to_sort_pop_1.csv and to_sort_pop_1.csv from bioinformatics_data on github.
-#these data are population counts for endangered species. The first four columns should be self explanitory (the species binomial, and the primary, secondary, and tertiary threat each species is being threatened by). The rest of the columns specify the population counts for given dates. If you compare the two data (to_sort_pop_1.csv vs to_sort_pop_1.csv) you will see that the population is specified in the names of the date columns.
-
 #do the above with the minimum amount of code (hint - %>%!)
 #In your RMarkdown make sure you explain what you have done and show your annotated code.
 
 #load the csv files
-
 to_sort_pop_1 <- vroom("https://raw.githubusercontent.com/chrit88/Bioinformatics_data/master/Workshop%203/to_sort_pop_1.csv")
 to_sort_pop_1 <- cbind(to_sort_pop_1[,1:4],"population"=1,to_sort_pop_1[,5:ncol(to_sort_pop_1)])
 to_sort_pop_2 <- vroom("https://raw.githubusercontent.com/chrit88/Bioinformatics_data/master/Workshop%203/to_sort_pop_2.csv")
