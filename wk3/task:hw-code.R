@@ -36,8 +36,8 @@ st_long <- st %>%
   pivot_longer(cols = -c(species:population),
                names_to = "date",
                values_to = "abundance")
-#make sure when you do this that you end up with (1) a column specifying which population the data are from (i.e. population 1 or 2), (2) a column specifying the date the data were collected, (3) a column with the population abundance estimates in it, and (4) that any missing values are dropped from the data. I.e. your data.frame should look like the figure below.
 
+#make sure when you do this that you end up with (1) a column specifying which population the data are from (i.e. population 1 or 2), (2) a column specifying the date the data were collected, (3) a column with the population abundance estimates in it, and (4) that any missing values are dropped from the data. I.e. your data.frame should look like the figure below.
 st_long_1=st_long[-which(is.na(st_long$abundance)),]
 st_long_1
 
